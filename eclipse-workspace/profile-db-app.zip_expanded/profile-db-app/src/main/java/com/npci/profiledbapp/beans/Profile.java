@@ -22,6 +22,7 @@ public class Profile {
 	/*
 	 * Generate setters and getters
 	 */
+	
 	public int getId() {
 		return id;
 	}

@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -38,6 +39,17 @@ public class ProfileControllerApi {
 		} catch(ProfileNotFoundException ex) {
 			Map<String, String> map = new HashMap<>();
 			map.put("errorMessage", ex.getMessage());
+			return ResponseEntity.status(404).body(map);
+		}
+	}
+	// updating the profile name by phone
+	@PutMapping(path = "/{phone}/{name}")
+	public ResponseEntity<Object> updateNameByPhone(@PathVariable long phone, @PathVariable String name) {
+		try {
+			return ResponseEntity.status(200).body(profileService.updateNameByPhone(phone, name));
+		} catch(ProfileNotFoundException e) {
+			Map<String, String> map = new HashMap<>();
+			map.put("errorMessage", e.getMessage());
 			return ResponseEntity.status(404).body(map);
 		}
 	}

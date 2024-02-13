@@ -17,5 +17,6 @@ public interface ProfileService {
 	public Profile updateProfilePhone(int id, long phone)throws ProfileNotFoundException; 
 	// below code calls dao.deleteById(id)
 	public void deleteProfile(int id)throws ProfileNotFoundException;
-	
+	// below code to update the name by phone number
+	public Profile updateNameByPhone(long phone, String name) throws ProfileNotFoundException;
 }

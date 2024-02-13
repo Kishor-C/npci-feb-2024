@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.npci.profiledbapp.beans.Profile;
 import com.npci.profiledbapp.dao.ProfileDao;
@@ -55,5 +56,11 @@ public class ProfileServiceImpl implements ProfileService {
 		profileDao.delete(profile);
 	}
 
-
+	@Transactional // required when you use JPQL to update
+	@Override
+	public Profile updateNameByPhone(long phone, String name) throws ProfileNotFoundException {
+		profileDao.updateNameByPhone(phone, name);
+		return findProfile(phone);
+		
+	}
 }
