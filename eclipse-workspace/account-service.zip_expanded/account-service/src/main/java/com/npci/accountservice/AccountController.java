@@ -16,6 +16,14 @@ public class AccountController {
 
 	@Value("${server.port}")
 	private String port;
+
+	// properties from the configuration file present in the GIT
+	@Value("${database.username}")
+	private String username;
+	
+	@Value("${database.password}")
+	private String password;
+	
 	
 	@GetMapping(path = "/{accountNumber}")
 	public ResponseEntity<Object> getBalance(@PathVariable("accountNumber") long accountNumber) {
@@ -28,6 +36,8 @@ public class AccountController {
 		map.put("account", accountNumber);
 		map.put("balance", balance);
 		map.put("port", port);
+		map.put("username", username);
+		map.put("password", password);
 		// pass the map to the response body
 		return ResponseEntity.status(200).body(map);
 	}
