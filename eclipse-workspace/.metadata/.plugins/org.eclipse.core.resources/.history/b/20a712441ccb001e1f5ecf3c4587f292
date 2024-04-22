@@ -1,0 +1,9 @@
+package com.npci.firstmsapp.controller;
+
+public class FMSController {
+
+	public FMSController() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

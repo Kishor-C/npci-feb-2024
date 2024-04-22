@@ -1,0 +1,17 @@
+package com.npci.springws.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.npci.springws.beans.Profile;
+
+@Service
+public class ProfileServiceListImpl {
+	/*
+	 * This will store the Profile in-memory instead of DB
+	 */
+	//List<Profile> to maintain the profile
+	private static List<Profile> inMemoryDB = new ArrayList<>();
+}

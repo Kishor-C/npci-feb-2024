@@ -1,0 +1,54 @@
+package com.npci.dao;
+
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.time.LocalDate;
+
+import org.postgresql.Driver;
+
+import com.npci.beans.Profile;
+
+public class TestDB {
+
+	public static void main(String[] args) {
+		// storing some records with for loop
+		for(int i = 1; i <=5 ; i++) {
+			Profile p = new Profile("Profile:"+i, 9399393*i, LocalDate.now());
+			int status = save(p);
+			System.out.println("**** "+status+" row created ****");
+		}
+	}
+	// a save method that accepts profile object to store in the db
+	public static int save(Profile profile) {
+		// initially save returns 0 later returns the number rows updated
+		int count = 0;
+		// now we must load the driver, establish connection, prepare statement and run query
+		try {
+			//Loading the driver
+			Class.forName(Driver.class.getName());// we can also use: forName("org.postgresql.Driver");
+			//Establish the connection
+			Connection connection = DriverManager
+					.getConnection("jdbc:postgresql://localhost:5432/npci_db", "postgres", "Welcome@123");
+			//Creating the statements
+			String sqlQuery = "insert into profile(name, phone, dob) values(?,?,?)";
+			PreparedStatement statement = connection.prepareStatement(sqlQuery);
+			// set profile table values using getter methods of Profile object
+			statement.setString(1, profile.getName()); // name of the profile object is set to name column
+			statement.setLong(2, profile.getPhone()); // phone of the profile object is to phone column
+			// import java.sql.Date not java.util.Date
+			statement.setDate(3, Date.valueOf(profile.getDob())); // you don't have setLocalDate
+			//Execute the query
+			count = statement.executeUpdate(); // executeUpdate returns int
+			//Close the resources usually done in the finally block
+			statement.close();
+			connection.close();
+		} catch(ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+		return count;
+	}
+
+}

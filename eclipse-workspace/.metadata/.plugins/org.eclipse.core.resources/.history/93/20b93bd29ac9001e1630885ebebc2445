@@ -1,0 +1,5 @@
+package com.npci.springws.exceptions;
+
+public class ProfileNotFoundException extends Exception {
+
+}

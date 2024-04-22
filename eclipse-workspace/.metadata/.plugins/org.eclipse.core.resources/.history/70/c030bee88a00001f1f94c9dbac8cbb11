@@ -1,0 +1,6 @@
+package com.npci.walletservice;
+
+public class Wallet {
+	private String name;
+	private double walletBalance;
+}

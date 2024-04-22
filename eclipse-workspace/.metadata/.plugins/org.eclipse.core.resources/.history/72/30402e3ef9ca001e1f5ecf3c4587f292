@@ -1,0 +1,9 @@
+package com.npci.profiledbapp.beans;
+
+public class Contact {
+
+	public Contact() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

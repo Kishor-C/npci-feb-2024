@@ -1,0 +1,10 @@
+package com.npci.springws.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class ProfileServiceListImpl {
+	/*
+	 * This will store the Profile in-memory instead of DB
+	 */
+}

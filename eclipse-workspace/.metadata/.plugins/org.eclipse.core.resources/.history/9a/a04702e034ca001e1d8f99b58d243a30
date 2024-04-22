@@ -1,0 +1,10 @@
+package com.npci.dao;
+
+public class TestDB {
+
+	public static void main(String[] args) {
+		
+	}
+	// a save method that accepts profile object to store in the db
+
+}

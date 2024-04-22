@@ -1,0 +1,11 @@
+package com.npci.walletservice;
+
+public class Wallet {
+	private String name;
+	private double walletBalance;
+	private double totalAmountToSpend; // walletBalance + accountBalance
+	private Account account;
+	
+	// generate 2 constructors, setters, getters
+	
+}

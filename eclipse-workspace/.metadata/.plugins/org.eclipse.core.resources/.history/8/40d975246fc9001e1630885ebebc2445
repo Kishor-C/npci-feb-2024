@@ -1,0 +1,8 @@
+package com.npci.springws.controller;
+
+// we are going to handle profile data like id, name, dob, phone
+// later, hence we are creating a profile controller
+
+public class ProfileController {
+
+}

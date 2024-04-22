@@ -1,0 +1,5 @@
+package com.npci.springws2war.controller;
+
+public class RestApi {
+
+}

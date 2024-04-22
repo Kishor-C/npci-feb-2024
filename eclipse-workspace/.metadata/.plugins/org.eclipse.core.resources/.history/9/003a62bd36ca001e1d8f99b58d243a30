@@ -1,0 +1,40 @@
+package com.npci.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import org.postgresql.Driver;
+
+import com.npci.beans.Profile;
+
+public class TestDB {
+
+	public static void main(String[] args) {
+		
+	}
+	// a save method that accepts profile object to store in the db
+	public static int save(Profile profile) {
+		// initially save returns 0 later returns the number rows updated
+		int count = 0;
+		// now we must load the driver, establish connection, prepare statement and run query
+		try {
+			//Loading the driver
+			Class.forName(Driver.class.getName());// we can also use: forName("org.postgresql.Driver");
+			//Establish the connection
+			Connection connection = DriverManager
+					.getConnection("jdbc:postgresql://localhost:5432/npci_db", "postgres", "Welcome@123");
+			//Creating the statements
+			String sqlQuery = "insert into profile(name, phone, dob) values(?,?,?)";
+			PreparedStatement statement = connection.prepareStatement(sqlQuery);
+			// set profile table values using getter methods of Profile object
+			statement.setString(1, profile.getName()); // name of the profile object is set to name column
+			
+		} catch(ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+		return count;
+	}
+
+}

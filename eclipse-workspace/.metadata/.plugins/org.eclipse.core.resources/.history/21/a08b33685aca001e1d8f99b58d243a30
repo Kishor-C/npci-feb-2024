@@ -1,0 +1,9 @@
+package com.npci.profiledbapp.controller;
+
+public class ProfileControllerApi {
+
+	public ProfileControllerApi() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+D:\Training Stuffs\Corporate Clients\NPCI\Mumbai-Feb2024-batch\eclipse-workspace\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+503600385.index
+1121844774.index
+817317732.index
+402729206.index
+613297838.index
+4167140664.index

@@ -1,0 +1,2 @@
+#instance-id
+spring.application.name=account-service

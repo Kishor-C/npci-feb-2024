@@ -1,0 +1,5 @@
+package com.npci.profiledbapp.beans;
+
+public class Profile {
+
+}

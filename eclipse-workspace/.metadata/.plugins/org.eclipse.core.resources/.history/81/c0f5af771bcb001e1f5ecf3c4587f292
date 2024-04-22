@@ -1,0 +1,4 @@
+server.port=8761
+# disabling the client features
+eureka.client.register-with-eureka=false
+eureka.client.fetch-registry=false

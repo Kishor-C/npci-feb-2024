@@ -1,0 +1,17 @@
+package com.npci.dao;
+
+import com.npci.beans.Profile;
+
+public class TestDB {
+
+	public static void main(String[] args) {
+		
+	}
+	// a save method that accepts profile object to store in the db
+	public static int save(Profile profile) {
+		// initially save returns 0 later returns the number rows updated
+		int count = 0;
+		return count;
+	}
+
+}

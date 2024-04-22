@@ -1,0 +1,7 @@
+package com.npci.profiledbapp.service;
+
+public interface ProfileService {
+	/*
+	 * Methods to call ProfileDao methods
+	 */
+}

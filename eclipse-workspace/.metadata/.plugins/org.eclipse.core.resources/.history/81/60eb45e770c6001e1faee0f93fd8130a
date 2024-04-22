@@ -1,0 +1,13 @@
+package com.npci.dao;
+
+import org.springframework.stereotype.Repository;
+
+@Repository // spring creates the object of this class
+public class EmployeeDaoV1 implements EmployeeDao{
+
+	@Override
+	public void store() {
+		System.out.println("---- store() inside V1 ----");
+	}
+	
+}

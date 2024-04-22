@@ -1,0 +1,6 @@
+package com.npci.profiledbapp.dao;
+// extend JpaRepository, you get save(T), findAll(), findById(ID) and so on
+// you can also create custom query methods which are also automatically implemented
+public interface ProfileDao {
+
+}

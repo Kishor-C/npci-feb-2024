@@ -1,0 +1,55 @@
+package com.npci.profiledbapp.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.npci.profiledbapp.beans.Profile;
+import com.npci.profiledbapp.dao.ProfileDao;
+import com.npci.profiledbapp.exceptions.ProfileNotFoundException;
+
+@Service
+public class ProfileServiceImpl implements ProfileService {
+
+	// injecting the dao layer
+	@Autowired
+	private ProfileDao profileDao; // spring injects auto-implemented dao layer
+	
+	@Override
+	public Profile store(Profile profile) {
+		return profileDao.save(profile); // saves and returns the saved entity
+	}
+
+	@Override
+	public Profile fetchProfile(int id) throws ProfileNotFoundException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Profile> findProfiles() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Profile findProfile(long phone) throws ProfileNotFoundException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Profile updateProfilePhone(int id, long phone) throws ProfileNotFoundException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteProfile(int id) throws ProfileNotFoundException {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+}

@@ -1,0 +1,7 @@
+package com.npci.walletservice;
+
+public class Account {
+	private long account;
+	private double balance;
+	private String port;
+}

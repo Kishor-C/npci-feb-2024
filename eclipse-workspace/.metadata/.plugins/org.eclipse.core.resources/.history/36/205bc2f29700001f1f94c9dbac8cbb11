@@ -1,0 +1,8 @@
+package com.npci.walletservice;
+
+import org.springframework.cloud.openfeign.FeignClient;
+
+@FeignClient(path = "http://ACCOUNT-SERVICE")
+public interface Client {
+
+}

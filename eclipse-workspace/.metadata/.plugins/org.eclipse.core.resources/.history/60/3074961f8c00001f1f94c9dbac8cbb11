@@ -1,0 +1,9 @@
+package com.npci.walletservice;
+
+public class WalletService {
+
+	public WalletService() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

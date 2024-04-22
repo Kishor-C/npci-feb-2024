@@ -1,0 +1,17 @@
+package com.npci.walletservice;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+@FeignClient(path = "http://ACCOUNT-SERVICE")
+public interface Client {
+
+	
+	
+	
+	@GetMapping(path = "/account/{acc}")
+	public Account getAccount(@PathVariable("acc") long acc) ;
+	// the above method when called sends the request to the remote service & converts the response
+	// to the Account object
+}

@@ -1,0 +1,12 @@
+package com.npci.springws.service;
+
+import java.util.List;
+
+import com.npci.springws.beans.Profile;
+
+public interface ProfileService {
+	// store profile & return the stored profile
+	public Profile store(Profile profile);
+	// fetch all the profiles
+	public List<Profile> fetchProfiles();
+}
