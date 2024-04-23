@@ -1,5 +1,0 @@
-package com.npci.profiledbapp.dao;
-
-public interface ProfileDao {
-
-}

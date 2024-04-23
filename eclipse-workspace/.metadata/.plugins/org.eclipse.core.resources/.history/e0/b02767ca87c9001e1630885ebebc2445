@@ -1,8 +1,0 @@
-package com.npci.springws.service;
-
-import com.npci.springws.beans.Profile;
-
-public interface ProfileService {
-	// store profile & return the stored profile
-	public Profile store(Profile profile);
-}

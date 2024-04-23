@@ -1,8 +1,0 @@
-package com.npci.springws.service;
-
-import org.springframework.stereotype.Service;
-
-@Service
-public class ProfileServiceListImpl {
-
-}

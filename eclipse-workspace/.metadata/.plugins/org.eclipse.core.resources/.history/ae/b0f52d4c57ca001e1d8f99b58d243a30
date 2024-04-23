@@ -1,9 +1,0 @@
-package com.npci.profiledbapp.service;
-
-public class ProfileServiceImpl {
-
-	public ProfileServiceImpl() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

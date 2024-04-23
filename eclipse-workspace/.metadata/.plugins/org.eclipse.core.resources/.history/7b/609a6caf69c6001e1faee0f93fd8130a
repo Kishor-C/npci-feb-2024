@@ -1,3 +1,0 @@
-# you can configure application related properties like
-# server port, datasource credentials, microservie configurations 
-# to change the port you must use server.port = 8081

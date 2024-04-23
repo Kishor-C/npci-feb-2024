@@ -1,8 +1,0 @@
-# spring.datasource.username, spring.datasource.password, url, driverClassName
-# copy these properties from the spring website and value from your old jdbc project
-spring.datasource.username=postgres
-spring.datasource.password=Welcome@123
-spring.datasource.url=jdbc:postgresql://localhost:5432/npci_db
-spring.datasource.driver-class-name=org.postgresql.Driver
-# below propery updates the table if it exists
-spring.jpa.hibernate.ddl-auto=update

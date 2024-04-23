@@ -1,9 +1,0 @@
-package com.npci.service;
-
-import com.npci.dao.EmployeeDao;
-
-public class EmployeeService {
-	private EmployeeDao dao;
-	// EmployeeDaoV1 dao; tightly coupled code
-	// EmpmloyeeDaoV2 dao; tightly coupled code
-}

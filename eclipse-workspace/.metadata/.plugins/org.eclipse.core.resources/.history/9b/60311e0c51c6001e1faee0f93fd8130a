@@ -1,7 +1,0 @@
-package com.npci.service;
-
-import com.npci.dao.EmployeeDao;
-
-public class EmployeeService {
-	private EmployeeDao dao;
-}

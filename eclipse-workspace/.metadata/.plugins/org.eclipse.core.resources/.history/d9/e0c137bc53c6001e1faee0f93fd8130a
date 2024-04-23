@@ -1,7 +1,0 @@
-package com.npci.controller;
-
-// this is a dummy controller, in reality you will map the request and return the response
-// buy for demo purpose we are using main method 
-public class TestController {
-
-}

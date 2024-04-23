@@ -1,3 +1,0 @@
-# spring.datasource.username, spring.datasource.password, url, driverClassName
-spring.datasource.username=postgres
-spring.datasource.password=Welcome@123

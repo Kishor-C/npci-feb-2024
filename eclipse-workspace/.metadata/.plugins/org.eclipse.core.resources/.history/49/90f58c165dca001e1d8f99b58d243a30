@@ -1,6 +1,0 @@
-# spring.datasource.username, spring.datasource.password, url, driverClassName
-spring.datasource.username=postgres
-spring.datasource.password=Welcome@123
-spring.datasource.url=jdbc:postgresql://localhost:5432/npci_db
-spring.datasource.driver-class-name=org.postgresql.Driver
-spring.jpa.hibernate.ddl-auto=update

@@ -1,5 +1,0 @@
-package com.npci.springws.service;
-
-public interface ProfileService {
-
-}
