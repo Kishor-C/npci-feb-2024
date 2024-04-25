@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -53,4 +54,17 @@ public class ProfileControllerApi {
 			return ResponseEntity.status(404).body(map);
 		}
 	}
+	// updating the profile name by phone
+	@DeleteMapping(path = "/{id}")
+	public ResponseEntity<Object> updateNameByPhone(@PathVariable int id) {
+		try {
+			profileService.deleteProfile(id);
+			return ResponseEntity.status(200).body("Profile with an id "+id+" deleted");
+		} catch(ProfileNotFoundException e) {
+			Map<String, String> map = new HashMap<>();
+			map.put("errorMessage", e.getMessage());
+			return ResponseEntity.status(404).body(map);
+		}
+	}
+	
 }

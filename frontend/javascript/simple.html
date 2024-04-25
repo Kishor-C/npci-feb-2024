@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Getting the data from the backend</h1>
+    <input type = 'text' id = 'a'>
+    <button onclick = 'getUser3()'>Fetch</button>
+    <div id = 'b'></div>
+    <script type = 'text/javascript'>
+        async function getUser3() {
+            let userId = document.getElementById('a').value;
+            let URL = `https://jsonplaceholder.typicode.com/users/${userId}`;
+            //fetch() returns a Promise to resolve the Response 
+            let res = await fetch(URL); // waits until Promise is resolved or rejected, here response is returned
+            let js = await res.json(); // waits until Promise is resolved or rejected, here response body is returned
+            document.getElementById('b').innerHTML = `<p>Id = ${js.id}, Name = ${js.username}</p>`;
+        }
+        function getUser2() {
+            let userId = document.getElementById('a').value;
+            let URL = `https://jsonplaceholder.typicode.com/users/${userId}`;
+            //fetch() returns a Promise to resolve the Response 
+            fetch(URL)
+                .then(response => response.json())
+                .then(json => document.getElementById('b').innerHTML = json.username+' '+json.email);
+            // fetch() performs asynchrnous operation
+            fetch(URL).then(response => console.log('inside the then function'));
+            console.log('outside the then function')
+        }
+        function getUser() {
+            //1st approach - XMLHttpRequest
+            // creating XMLHttpRequest object
+            let xhr = new XMLHttpRequest();
+            let userId = document.getElementById('a').value;
+            let URL = `https://jsonplaceholder.typicode.com/users/${userId}`;
+            // initialize the request using open(httpMethod, URL)
+            xhr.open('GET', URL); // readyState = 1
+            xhr.send(); // readyState = 2
+            // onreadystatechange doesn't have camel case
+            xhr.onreadystatechange = () => {
+                if(xhr.readyState == 4) {
+                    // responseText is the property that stores the data
+                    document.getElementById('b').innerHTML = xhr.responseText;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
