@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,6 +20,7 @@ import com.npci.profiledbapp.beans.Profile;
 import com.npci.profiledbapp.exceptions.ProfileNotFoundException;
 import com.npci.profiledbapp.service.ProfileService;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/profile")
 public class ProfileControllerApi {
@@ -32,6 +34,12 @@ public class ProfileControllerApi {
 		// we can directly return ResponseEntity by storing the profile with HTTP status code 201
 		return ResponseEntity.status(201).body(profileService.store(profile));
 	}
+	
+	@GetMapping
+	public ResponseEntity<Object> getProfiles() {
+		return ResponseEntity.status(200).body(profileService.findProfiles());
+	}
+	
 	// finding the profile based on id
 	@GetMapping(path = "/{id}")
 	public ResponseEntity<Object> findApi(@PathVariable int id) {

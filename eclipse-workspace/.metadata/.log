@@ -8193,3 +8193,12 @@ java.util.concurrent.TimeoutException
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-04-25 16:08:27.722
+!MESSAGE Classpath changed for project: profile-db-app
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-04-25 17:49:54.141
+!MESSAGE Classpath changed for project: profile-db-app
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-04-25 17:49:58.782
+!MESSAGE Classpath changed for project: profile-db-app
